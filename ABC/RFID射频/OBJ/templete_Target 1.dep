@@ -1,0 +1,106 @@
+Dependencies for Project 'templete', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x532BB241)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 528" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (..\SYSTEM\delay\delay.c)(0x555AC5E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\sys\sys.c)(0x550EB960)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\SYSTEM\usart\usart.c)(0x550EB9F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+F (.\main.c)(0x6422B44B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\HARDWARE\OUTPUT\output.h)(0x5AF16A90)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (..\HARDWARE\RFID\rc522.h)(0x5B02A14F)
+I (..\HARDWARE\SPI2\spi2.h)(0x5AF3B0BE)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\HARDWARE\LCD\lcd.h)(0x5ACF27C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\HARDWARE\KEY\key.h)(0x54CB0C4D)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (..\HARDWARE\LED\led.h)(0x54B135E7)
+I (..\HARDWARE\STORE\store.h)(0x5B067B34)
+F (..\HARDWARE\LCD\ILI93xx.c)(0x5AD036FD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\ili93xx.o --omf_browse ..\obj\ili93xx.crf --depend ..\obj\ili93xx.d)
+I (..\HARDWARE\LCD\lcd.h)(0x5ACF27C6)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\HARDWARE\LCD\font.h)(0x547B07F5)
+I (..\SYSTEM\usart\usart.h)(0x550EB9F1)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\OUTPUT\output.c)(0x5AF18729)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\output.o --omf_browse ..\obj\output.crf --depend ..\obj\output.d)
+I (..\HARDWARE\OUTPUT\output.h)(0x5AF16A90)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\RFID\rc522.c)(0x5B06829E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\rc522.o --omf_browse ..\obj\rc522.crf --depend ..\obj\rc522.d)
+I (..\HARDWARE\RFID\rc522.h)(0x5B02A14F)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\SPI2\spi2.h)(0x5AF3B0BE)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+F (..\HARDWARE\SPI2\SPI2.c)(0x5B066AB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\spi2.o --omf_browse ..\obj\spi2.crf --depend ..\obj\spi2.d)
+I (..\HARDWARE\SPI2\SPI2.h)(0x5AF3B0BE)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\LED\led.c)(0x54B135F0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+I (..\HARDWARE\LED\led.h)(0x54B135E7)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\HARDWARE\KEY\key.c)(0x5517B7E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+I (..\HARDWARE\KEY\key.h)(0x54CB0C4D)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+F (..\HARDWARE\STORE\store.c)(0x5B069B1D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LCD -I ..\HARDWARE\OUTPUT -I ..\HARDWARE\RFID -I ..\HARDWARE\SPI2 -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\STORE-I.\RTE\_Target_1-ID:\Users\qin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD-o ..\obj\store.o --omf_browse ..\obj\store.crf --depend ..\obj\store.d)
+I (..\HARDWARE\STORE\store.h)(0x5B067B34)
+I (..\SYSTEM\sys\sys.h)(0x5AC6128A)
+I (..\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
+I (..\SYSTEM\sys\core_cm3.h)(0x4D523B58)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\SYSTEM\sys\system_stm32f10x.h)(0x4F1E2E3C)
+I (..\HARDWARE\RFID\rc522.h)(0x5B02A14F)
+I (..\HARDWARE\SPI2\spi2.h)(0x5AF3B0BE)
+I (..\SYSTEM\delay\delay.h)(0x555AC61F)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\HARDWARE\KEY\key.h)(0x54CB0C4D)

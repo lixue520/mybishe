@@ -1,0 +1,190 @@
+#include "stm32f10x.h"                  // Device header
+#include "pump.h"
+#include "beep.h"
+#include "delay.h"
+#include "timer.h"
+#include "usart.h"
+#include "exti.h"
+#include "stdio.h"
+#include "esp8266.h"
+#include "onenet.h"
+#include "led.h"
+#include "RC522.h"
+#include "store.h"
+u8 alarmFlag = 0;//是否报警的标志
+u8 alarm_is_free = 10;//报警器是否被手动操作，如果被手动操作即设置为0
+unsigned char DefaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+unsigned char g_ucTempbuf[20];
+
+u32 Height; //液位高度
+u32 Flow;   //水流量
+
+extern char oledBuf[20];
+u8 Led_Status = 0;
+u8 BEEP=0;
+u8 Pump=0;
+char PUB_BUF[256];//上传数据的buf
+char devicd_id[]="qzw10086"; //设备号
+const char *devSubTopic[] = {"smartwater/sub"};
+const char devPubTopic[] = "smartwater/pub";
+u8 ESP8266_INIT_OK = 0;//esp8266初始化完成标志
+extern void delay_init(void);
+
+int main(void)
+{
+
+    unsigned short timeCount = 0;	//发送间隔变量
+    unsigned char *dataPtr = NULL;  //接收平台数据
+    static u8 lineNow;
+	unsigned char status;
+
+	
+    Usart1_Init(115200);//debug串口，向串口打印数据
+    DEBUG_LOG("\r\n");
+    DEBUG_LOG("1.UART1初始化			[OK]");
+	
+    delay_init();	    	 //延时函数初始化
+    DEBUG_LOG("2.延时函数初始化			[OK]");
+	
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);// 设置中断优先级分组2
+    DEBUG_LOG("3.中断优先初始化			[OK]");
+
+    EXTIX_Init();		//外部中断初始化
+    DEBUG_LOG("4.外部中断初始化			[OK]");
+
+    BEEP_Init();
+	DEBUG_LOG("5.蜂鸣报警器初始化			[OK]");
+	
+	Pump_Init();
+	DEBUG_LOG("6.水泵控制器初始化			[OK]");
+	
+   
+    Usart2_Init(115200);//stm32-8266通讯串口
+    DEBUG_LOG("7.UART2初始化			[OK]");
+	
+	LED_Init();
+	DEBUG_LOG("8.LED指示灯初始化		[OK]");
+	
+	RC522_Init();
+	PcdReset();//复位RC522
+    PcdAntennaOff();
+    delay_ms(10);
+    PcdAntennaOn();//开启天线
+    delay_ms(10);
+	DEBUG_LOG("9.RC522初始化		    [OK]");
+    DEBUG_LOG("-------基础硬件初始化完成--------");
+
+    delay_ms(1000);
+#if 0
+    DEBUG_LOG("初始化ESP8266 WIFI模块...");
+    //if(!ESP8266_INIT_OK) {}
+    ESP8266_Init();					//初始化ESP8266
+    while(OneNet_DevLink()) { //接入OneNET
+        delay_ms(500);
+    }
+#endif 
+//    TIM2_Int_Init(4999,7199);
+    TIM3_Int_Init(2499,7199);
+    DEBUG_LOG("初始化定时器3...");
+#if 0
+    OneNet_Subscribe(devSubTopic, 1);//订阅服务器话题管道
+#endif 
+    while(1) {
+		PCout(13)=1;
+					status=userRecharge(addrUserDat,CARDKEYINIT,Recharge,0);  	//充值金额
+			if(status==MI_OK)
+			{
+				printf("余额:%d 充值:%d 现余额:%d\r\n\r\n",prevMoney,Recharge,laterMoney);
+			}
+		#if 0
+        status = PcdRequest(PICC_REQALL, g_ucTempbuf);//寻卡(感应范围内的卡，卡片类型刚开始默认20位字符的)
+        if (status != MI_OK)//status得到寻卡成功返回的状态数为其他时重新开启天线
+        {
+            PcdReset();
+            PcdAntennaOff();
+            PcdAntennaOn();
+            continue;
+            //47 21 12 17   2F  15 0C 11
+        }
+        else
+        {
+            status = PcdAnticoll(g_ucTempbuf);//防冲撞，寻卡成功后g_ucTempbuf发生改变
+            if(g_ucTempbuf[0]==0x04&&g_ucTempbuf[1]==0x5F&&g_ucTempbuf[2]==0x70&&g_ucTempbuf[3]==0xD9)
+            {
+				DEBUG_LOG("open");
+                PCout(13)=0;//置高
+
+            }
+            else if(g_ucTempbuf[0]==0x2F&&g_ucTempbuf[1]==0x15&&g_ucTempbuf[2]==0x0C&&g_ucTempbuf[3]==0x11) {
+
+				DEBUG_LOG("open");
+                 PCout(13)=0;//置高
+            }
+            else if(g_ucTempbuf[0]==0xB7&&g_ucTempbuf[1]==0xE7&&g_ucTempbuf[2]==0x6A&&g_ucTempbuf[3]==0xD9) {
+
+				DEBUG_LOG("open");
+                 PCout(13)=0;//置高
+
+            }
+            else if(g_ucTempbuf[0]==0x7B&&g_ucTempbuf[1]==0x2D&&g_ucTempbuf[2]==0x13&&g_ucTempbuf[3]==0xA9) {
+				DEBUG_LOG("open");
+  				
+                 PCout(13)=0;//置高
+
+            }
+            else if(g_ucTempbuf[0]==0x16&&g_ucTempbuf[1]==0x5E&&g_ucTempbuf[2]==0x0B&&g_ucTempbuf[3]==0xA9) {
+
+				DEBUG_LOG("open");
+                 PCout(13)=0;//置高
+            }
+            else
+            {
+
+				DEBUG_LOG("close");
+                 PCout(13)=1;//置高
+            }
+        }
+#endif
+	
+#if 0
+        if(timeCount % 40 == 0)//1000ms / 25 = 40 一秒执行一次
+        {
+
+            /********** 液位传感器获取数据**************/
+			Height = 66;
+            /********** 流量传感器获取数据**************/	
+			Flow = 66;
+            /********** 读取水泵状态 **************/
+            Pump = GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_7);
+            /********** 读取蜂鸣器状态 **************/
+            BEEP = GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_6);
+            /********** 获取IC卡数据 **************/
+
+            /********** 报警逻辑 **************/
+            if(alarm_is_free == 10)//报警器控制权是否空闲 alarm_is_free == 10 初始值为10
+            {
+
+            }
+            if(alarm_is_free < 10)alarm_is_free++;
+
+        }
+        if(++timeCount >= 100)	// 5000ms / 25 = 200 发送间隔5000ms
+        {
+            DEBUG_LOG("发布数据 ----- OneNet_Publish");
+		
+            sprintf(PUB_BUF,"{\"Devicd\":\"%s\",\"Height\":%d,\"flow\":%d,\"Beep\":%d,\"Pump\":%d}",
+                    devicd_id,Height,Flow,BEEP,Pump);
+            OneNet_Publish(devPubTopic, PUB_BUF);
+            DEBUG_LOG("==================================================================================");
+            timeCount = 0;
+            ESP8266_Clear();
+        }
+
+        dataPtr = ESP8266_GetIPD(3);
+        if(dataPtr != NULL)
+            OneNet_RevPro(dataPtr);
+        delay_ms(10);
+#endif	
+    }
+
+}

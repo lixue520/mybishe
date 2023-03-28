@@ -1,0 +1,17 @@
+--cpu Cortex-M3
+"..\obj\startup_stm32f10x_hd.o"
+"..\obj\delay.o"
+"..\obj\sys.o"
+"..\obj\usart.o"
+"..\obj\main.o"
+"..\obj\ili93xx.o"
+"..\obj\output.o"
+"..\obj\rc522.o"
+"..\obj\spi2.o"
+"..\obj\led.o"
+"..\obj\key.o"
+"..\obj\store.o"
+--strict --scatter "..\OBJ\templete.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\templete.map" -o ..\OBJ\templete.axf
