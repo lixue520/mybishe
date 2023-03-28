@@ -1,5 +1,5 @@
-.\objects\spi.o: Hardware\SPI\spi.c
-.\objects\spi.o: Hardware\SPI\spi.h
+.\objects\spi.o: Shop\SPI\spi.c
+.\objects\spi.o: Shop\SPI\spi.h
 .\objects\spi.o: .\System\sys\sys.h
 .\objects\spi.o: .\Start\stm32f10x.h
 .\objects\spi.o: .\Start\core_cm3.h

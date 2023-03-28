@@ -1,4 +1,4 @@
-.\objects\rc522.o: Hardware\RFID\rc522.c
+.\objects\rc522.o: Shop\RFID\rc522.c
 .\objects\rc522.o: .\System\sys\sys.h
 .\objects\rc522.o: .\Start\stm32f10x.h
 .\objects\rc522.o: .\Start\core_cm3.h
@@ -29,7 +29,7 @@
 .\objects\rc522.o: .\Library\stm32f10x_usart.h
 .\objects\rc522.o: .\Library\stm32f10x_wwdg.h
 .\objects\rc522.o: .\Library\misc.h
-.\objects\rc522.o: Hardware\RFID\rc522.h
+.\objects\rc522.o: Shop\RFID\rc522.h
 .\objects\rc522.o: .\System\delay\delay.h
 .\objects\rc522.o: .\System\usart\usart.h
 .\objects\rc522.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

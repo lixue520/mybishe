@@ -1,0 +1,57 @@
+#include "pay.h"
+#include "usart.h"
+
+unsigned char snr, buf[16], TagType[2], SelectedSnr[4], DefaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+
+/* ---------------------------------------------------------------- */
+/**
+  * @Name    test_read_write
+  * @param   : [输入/出] 
+  * @author  DavidNan
+  * @Data    2023-03-29
+  * <description> :简单测试一下读写功能
+ **/
+/* ---------------------------------------------------------------- */
+
+void test_read_write(){
+        unsigned char status;
+// 寻卡
+        status= PcdRequest( REQ_ALL, TagType );     // REQ_ALL代表寻天线区内所有卡。TagType为返回的卡类型
+        if(!status)
+        {
+            // 防冲突
+            status = PcdAnticoll(SelectedSnr);
+            if(!status)
+            {
+                // 选卡
+                status=PcdSelect(SelectedSnr);
+                if(!status)
+                {
+                    // 认证
+                    snr = 1;    // 扇区号1
+                    status = PcdAuthState(KEYA, (snr*4+3), DefaultKey, SelectedSnr);    // 校验1扇区密码，密码位于每一扇区第3块
+                    // 验证A密钥，块地址，扇区密码，卡序列号
+                    {
+                        if(!status)
+                        {
+                            //读写卡
+                            status = PcdRead((snr*4+0), buf);   // 读卡，读取1扇区0块数据到buf[0]-buf[16]
+                            buf[0]='a';
+                            buf[1]='b';
+                            buf[2]='c';
+                            status = PcdWrite((snr*4+0), buf);   // 写卡，将buf[0]-buf[16]写入1扇区0块
+                            if(!status)
+                            {
+                                //读写成功
+//                                printf("read finish!\n");
+//                                printf("读到的值是： %s\n",buf);
+								DEBUG_LOG("读写成功!");
+								DEBUG_LOG("读到的值是： %s\n",buf);
+                                WaitCardOff();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}

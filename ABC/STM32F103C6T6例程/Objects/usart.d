@@ -31,3 +31,5 @@
 .\objects\usart.o: .\Library\misc.h
 .\objects\usart.o: System\usart\usart.h
 .\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

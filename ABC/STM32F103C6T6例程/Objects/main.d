@@ -32,5 +32,12 @@
 .\objects\main.o: .\Library\misc.h
 .\objects\main.o: .\System\usart\usart.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: .\Hardware\RFID\rc522.h
+.\objects\main.o: .\Shop\RFID\rc522.h
+.\objects\main.o: .\Hardware\Pump\pump.h
+.\objects\main.o: .\Hardware\BEEP\beep.h
+.\objects\main.o: .\System\TIMER\timer.h
+.\objects\main.o: .\System\EXTI\exti.h
+.\objects\main.o: .\Net\device\esp8266.h
+.\objects\main.o: .\Net\onenet\onenet.h
 .\objects\main.o: .\Hardware\LED\led.h
+.\objects\main.o: .\Shop\Pay\pay.h

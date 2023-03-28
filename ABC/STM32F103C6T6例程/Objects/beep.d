@@ -1,6 +1,5 @@
 .\objects\beep.o: Hardware\BEEP\beep.c
 .\objects\beep.o: Hardware\BEEP\beep.h
-.\objects\beep.o: .\System\sys\sys.h
 .\objects\beep.o: .\Start\stm32f10x.h
 .\objects\beep.o: .\Start\core_cm3.h
 .\objects\beep.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

@@ -19,6 +19,7 @@ u32 Height; //液位高度
 u32 Flow;   //水流量
 
 extern char oledBuf[20];
+
 u8 Led_Status = 0;
 u8 BEEP=0;
 u8 Pump=0;

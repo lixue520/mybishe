@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Start;.\Library;.\User;.\System;.\Hardware\BEEP;.\Hardware\LED;.\System\delay;.\System\usart;.\System\sys;.\Hardware\SPI;.\Hardware\RFID</IncludePath>
+              <IncludePath>.\Start;.\Library;.\User;.\System;.\System\delay;.\System\usart;.\System\sys;.\Net\cJSON;.\Net\device;.\Net\MQTT;.\Net\onenet;.\Shop\RFID;.\Shop\SPI;.\Hardware\BEEP;.\Hardware\KEY;.\Hardware\LED;.\Hardware\Pump;.\Hardware\water;.\Hardware\waterflow;.\System\adc;.\System\EXTI;.\System\TIMER;.\Shop\Pay</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -667,6 +667,21 @@
               <FileType>1</FileType>
               <FilePath>.\System\usart\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\adc\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\EXTI\exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\TIMER\timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -703,9 +718,29 @@
               <FilePath>.\Hardware\BEEP\beep.c</FilePath>
             </File>
             <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\KEY\key.c</FilePath>
+            </File>
+            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Hardware\LED\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>pump.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Pump\pump.c</FilePath>
+            </File>
+            <File>
+              <FileName>water.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\water\water.c</FilePath>
+            </File>
+            <File>
+              <FileName>waterflow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\waterflow\waterflow.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -713,14 +748,44 @@
           <GroupName>shop</GroupName>
           <Files>
             <File>
-              <FileName>rc522.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Hardware\RFID\rc522.c</FilePath>
-            </File>
-            <File>
               <FileName>spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Hardware\SPI\spi.c</FilePath>
+              <FilePath>.\Shop\SPI\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>rc522.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Shop\RFID\rc522.c</FilePath>
+            </File>
+            <File>
+              <FileName>pay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Shop\Pay\pay.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Net</GroupName>
+          <Files>
+            <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Net\cJSON\cJSON.c</FilePath>
+            </File>
+            <File>
+              <FileName>esp8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Net\device\esp8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>MqttKit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Net\MQTT\MqttKit.c</FilePath>
+            </File>
+            <File>
+              <FileName>onenet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Net\onenet\onenet.c</FilePath>
             </File>
           </Files>
         </Group>
